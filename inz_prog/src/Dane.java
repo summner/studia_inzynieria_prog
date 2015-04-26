@@ -1,5 +1,7 @@
+import static org.mockito.Mockito.mock;
+
 import java.io.FileReader;
-import java.util.LinkedList;
+import java.io.FileWriter;
 import java.util.List;
 
 public class Dane {
@@ -7,16 +9,21 @@ public class Dane {
   public String NazwaPliku;
   public int TypPliku;
 
+  FileReader streamReader = mock(FileReader.class);
+  List<Wartosc> wartosci;
+
   public void CzytajDane() {
+    wartosci.stream().forEach(wartosc -> wartosc.CzytajWartosc(streamReader));
   }
 
-  public void ZapiszDane(FileReader stream) {
+  public void ZapiszDane(FileWriter stream) {
+    wartosci.forEach(wartosc -> wartosc.ZapiszWartosc(stream));
   }
 
   public void SetNazwaPliku(String nazwa) {
   }
 
-  public List GetWektorDanych() {
-    return new LinkedList();
+  public List<Wartosc> GetWektorDanych() {
+    return wartosci;
   }
 }

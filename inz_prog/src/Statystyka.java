@@ -2,7 +2,7 @@ import java.io.FileWriter;
 
 public class Statystyka {
 
-  Dane dane;
+  public Dane dane;
 
   public void ZapiszStatystyka(FileWriter stream) {
 

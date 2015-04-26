@@ -6,7 +6,8 @@ public class SredniaArytmetyczna extends Statystyka {
 
   @Override
   public void Oblicz() {
-
+    WartoscStatystyki =
+        dane.GetWektorDanych().stream().mapToInt(Wartosc::KonwertujDoInt).average().getAsDouble();
   }
 
   @Override
